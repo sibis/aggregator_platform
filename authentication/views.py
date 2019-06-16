@@ -34,11 +34,7 @@ def signup(request):
 @permission_classes((permissions.AllowAny,))
 def login_test(request):
 	serialized = LoginSerializer(data=request.data)
-	print('before')
 	if serialized.is_valid():
-		print('valid')
-		print(serialized.data['email'])
-		print(serialized.data['password'])
 		user = authenticate(username=serialized.data['email'], password=serialized.data['password'])
 		print(user)
 		if user is not None :

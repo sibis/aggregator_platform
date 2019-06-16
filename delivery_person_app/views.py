@@ -12,6 +12,7 @@ from datetime import datetime
 from authentication.decorators import is_delivery_person
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
+from store_manager_app import views
 
 from delivery_person_app.serializers import FetchDeliveryTaskSerializer
 
@@ -47,6 +48,7 @@ def decline_task(request):
 			task_transaction.save()
 			message = task.name+" "+" rejected by "+request.user.name
 			notify_manager(task.created_by.id,message)
+			views.send_high_prioirity_task()
 			return Response({'msg':'Task declined successfully!'}, status=status.HTTP_200_OK)
 		else:
 			return Response({'msg':'cannot decline the task'}, status=status.HTTP_400_BAD_REQUEST)
@@ -108,7 +110,7 @@ def accept_task(request):
 				#sending notification alert
 				message = task.name+" "+" task accepted by "+request.user.name
 				notify_manager(task.created_by.id,message)
-
+				views.send_high_prioirity_task()
 				return Response({'msg':'Task accepted successfully!'}, status=status.HTTP_200_OK)
 			else:
 				return Response({'msg':'cannot accept the task'}, status=status.HTTP_400_BAD_REQUEST)

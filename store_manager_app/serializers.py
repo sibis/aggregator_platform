@@ -23,11 +23,12 @@ class UsersSerializer(serializers.ModelSerializer):
 
 class  FetchTaskSerializer(serializers.ModelSerializer):
 	created_by = UsersSerializer(required=True, allow_null=False)
+	completed_by = UsersSerializer(required=True, allow_null=False)
 
 	class Meta:
 		model = Task
 		fields = ('id','name','priority','state','created_by','created_on','completed_by','completed_on')
-		related_object = 'created_by'
+		related_object = 'created_by','completed_by'
 
 class FetchTaskTransactionsSerializer(serializers.ModelSerializer):
 	performed_by = UsersSerializer(required=True, allow_null=False)
