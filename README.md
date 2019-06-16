@@ -1,7 +1,7 @@
 # aggregator_platform
 
-Django rest api - Authentication
-Channels - real time notifications(web sockets)
+* Django rest api - Authentication
+* Channels - real time notifications(web sockets)
 
 This project has two user roles - Store manager and Delivery person.
 
