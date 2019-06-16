@@ -8,15 +8,15 @@ This project has two user roles -
 * Delivery person.
 
 Task states, 
-   # New - initially when its created/not accepted by any delivery person
-   # Accepted - Once the delivery persons accepts
-   # Completed/Declined - these actions can be taken by delivery person once he/she accepts it
-   # Canceled - A manager(who created the task) can cancel only if its not accepted by any person
+   1. New - initially when its created/not accepted by any delivery person
+   2. Accepted - Once the delivery persons accepts
+   3. Completed/Declined - these actions can be taken by delivery person once he/she accepts it
+   4. Canceled - A manager(who created the task) can cancel only if its not accepted by any person
    
 Task priorities, 
-   # Low,
-   # Medium,
-   # High
+   1. Low,
+   2. Medium,
+   3. High
 
 List of endpoints,
 
