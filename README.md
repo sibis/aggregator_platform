@@ -21,13 +21,21 @@ Task priorities,
 List of endpoints,
 
 => /manager/list_tasks - self explanatory
+
 => /manager/create_task - A manager can create a task with certain priority level.
+
 => /manager/cancel_task - To cancel a task which is not accepted by any delivery persons
+
 => /manager/list_transactions - Will list all the details/transactions of that particular task
 
+
 => /delivery_person/list_tasks  - (self explanatory)
+
 => /delivery_person/accept_task
+
 => /delivery_person/complete_task
+
 => /delivery_person/decline_task
+
 
 All these actions taken by the delivery person will be notified the manager and any higher priority task created by manager will be updated to all delivery persons in a real-time websockets(channels).
