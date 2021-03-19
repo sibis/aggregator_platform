@@ -14,7 +14,7 @@ daphne==2.3.0
 Django==2.2.4
 django-cors-headers==3.0.2
 django-filter==2.1.0
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 hiredis==1.0.0
 hyperlink==19.0.0
 idna==2.8
